@@ -65,6 +65,9 @@ buttons.forEach(button =>{
     
 })
 function handleInput(e){
+    try{
+
+    
     realCalculation = resultScreen.value;
     if(e.key ==='Enter'){
         result = eval(realCalculation)
@@ -85,6 +88,13 @@ function handleInput(e){
             resultScreen.value = String(result);
         }
     }
+}catch(error){
+    container.classList.add('shake-anim');
+    setTimeout(()=>{
+        container.classList.remove('shake-anim')
+        },250)
+        return ;
+}
     
 }
 resultScreen.addEventListener('keyup',handleInput)
