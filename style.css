@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap');
+*{
+    margin:0px;
+    padding:0px;
+    box-sizing: border-box;
+    font-family: "League Spartan"
+}
+body{
+    background-color:hsl(222, 26%, 31%);
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+   
+
+}
+.container{
+    max-width: 375px;
+    width:100%;
+    background-color:hsl(222, 26%, 31%);
+    min-height: 400px;
+    padding:24px;
+}
+/*Head styling*/
+.head-part{
+    color:white;
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.head-part .right-side{
+    display:flex;
+}
+
+.toogle{
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.selector{
+    display:flex;
+    align-items: flex-end;
+}
+.selector-numbers{
+    font-size:14px;
+    width:68px;
+    display:flex;
+    justify-content: space-around;
+    margin-bottom:6px;
+    cursor: pointer;
+}
+.number{
+    padding:8px;
+    padding-bottom:0px;
+}
+.selector-balls{
+    width:68px;
+    height:25px;
+    background-color:hsl(223, 31%, 20%);
+    border-radius: 20px;
+    padding:4px;
+    display:flex;
+    position: relative;
+    justify-content: space-around;
+}
+.selector p:first-child{
+    margin-right:28px;
+}
+
+.ball{
+   width:16px;
+   height: 16px;
+   display:flex; 
+   cursor: pointer;
+   border-radius: 8px;
+   opacity: 0;
+}
+.ball:not(:first-child):hover{
+    opacity: 0.60;
+}
+.ball:nth-child(2){
+    background-color:  hsl(6, 63%, 50%);
+}
+.ball:nth-child(3){
+    background-color:hsl(0, 5%, 81%)
+}
+.ball:nth-child(4){
+    background-color: hsl(268, 71%, 12%)
+}
+.ball:first-child{
+    position: absolute;
+    display:block;
+    left:6px;
+    background-color:  hsl(6, 63%, 50%);
+    opacity: 1;
+    
+}
+
+h1{
+    margin-top:12px;
+}
+/*Screen styling*/
+
+.screen{
+    background-color:hsl(224, 36%, 15%);
+    width:100%;
+    height: 88px;
+    margin-top:32px;
+    border-radius:10px;
+    color:white;
+    display:flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    position: relative;
+    padding-right:26px;
+}
+.calculation{
+    font-size:40px;
+    appearance: none;
+    border:none;
+    outline: none;
+    display:flex;
+    width:93%;
+    background:none;
+    color:white;
+    text-align: right;
+}
+.result{
+    position: absolute;
+    top:8px;
+    font-size:14px;
+    right:26px;
+    opacity:0.6;
+}
+
+.keyboard-part{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap:12px;
+    padding:24px;
+    background-color:hsl(223, 31%, 20%);
+    margin-top:24px;
+    border-radius:12px;
+}
+.btn{
+    font-size: 32px;
+    background-color:rgb(231,228,221);
+    color:rgb(65,71,85);
+    border:none;
+    width: 100%;
+    height: 60px;
+    border-radius:8px;
+    border-bottom:4px solid rgb(175, 165, 156);
+    cursor:pointer;
+}
+.btn:hover{
+    filter: brightness(120%)
+}
+.reset{
+    grid-column: span 2;
+    border-bottom: 4px solid #3f4d74;
+    background-color:rgb(100,114,153);
+    color:white;
+    font-size:20px;
+}
+.equal{
+    background-color:hsl(6, 63%, 50%);
+    color:white;
+    border-bottom: 4px solid  hsl(6, 70%, 34%);
+    grid-column: span 2;
+}
+.del{
+    background-color:rgb(100,114,153);
+    color:white;
+    font-size:20px;
+   
+    border-bottom: 4px solid #3f4d74;
+}
+
+@keyFrames shake{
+    0%{
+        transform: translateX(-5px)
+    }
+    50%{
+        transform: translateX(5px)
+    }
+    100%{
+        transform: translateX(0px)
+    }
+}
+.shake-anim{
+    animation-name:shake;
+    animation-duration: 0.25s;
+}
+
+@media screen and (min-width:376px){
+    .container{
+        max-width: 510px;
+        width:100%;
+    }
+    .keyboard-part{
+        gap:24px;
+    }
+}
+
